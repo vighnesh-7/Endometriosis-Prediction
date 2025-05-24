@@ -1,0 +1,154 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 255 70% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 83% 88%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 255 70% 65%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 262 83% 68%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262 83% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-endo to-medical-500 bg-clip-text text-transparent;
+  }
+}
+
+@layer components {
+  .hero-section {
+    @apply relative overflow-hidden bg-gradient-to-b from-medical-50 to-white py-20;
+  }
+  
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl border bg-white/50 p-6 shadow-sm backdrop-blur transition-all hover:shadow-md;
+  }
+  
+  .form-input-wrapper {
+    @apply mb-4 rounded-lg bg-white p-4 shadow-sm transition-all hover:shadow;
+  }
+  
+  .form-label {
+    @apply mb-1 block text-sm font-medium text-gray-700;
+  }
+  
+  .form-input {
+    @apply w-full rounded-md border border-gray-300 p-2 focus:border-endo focus:outline-none focus:ring-2 focus:ring-endo/20;
+  }
+  
+  .nav-link {
+    @apply relative px-3 py-2 text-foreground/80 transition-colors hover:text-foreground;
+  }
+  
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 h-[2px] w-full scale-x-0 bg-endo transition-transform duration-300 content-[''];
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply scale-x-100;
+  }
+  
+  .nav-link.active {
+    @apply text-endo;
+  }
+}
+
+.prediction-wrapper {
+  background:
+    radial-gradient(circle at top right, rgba(215, 211, 255, 0.2), transparent 400px),
+    radial-gradient(circle at bottom left, rgba(198, 246, 255, 0.2), transparent 400px);
+}
+
+.feature-card {
+  @apply relative overflow-hidden rounded-xl p-6;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+}
+
+
+ * {cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1037.cur), auto !important;} /* End https://www.cursors-4u.com */
